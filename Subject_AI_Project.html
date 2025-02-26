@@ -94,7 +94,7 @@
         }
 
         .camera-box-inner-box {
-            
+
             background: rgba(106, 176, 204, 0.875);
         }
 
@@ -201,34 +201,9 @@
             box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.23);
             z-index: 2;
-        }
-
-        .overlay-box h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2em;
-            color: #a8caff;
-        }
-
-        .overlay-box p {
-            margin: 0;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .status-indicator {
-            display: flex;
             align-items: center;
-            margin-top: 15px;
         }
 
-        .status-light {
-            width: 10px;
-            height: 10px;
-            background: #00ff00b3;
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 8px #00ff00b7;
-        }
 
         @media (max-width: 768px) {
             .main-box {
@@ -241,6 +216,49 @@
                 width: 100%;
                 height: 50%;
             }
+        }
+
+
+        .webcam-box {
+           
+            width: 90%;
+            height: 45%;
+            margin-left: 23.5px;
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* overflow: hidden; */
+            border: 2px solid white;
+            margin-bottom: 10px;
+            
+        }
+
+        #webcam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video stays within the box without stretching */
+    border-radius: 10px;
+    display: block; /* Ensures it's visible properly */
+}
+
+
+        #capture-btn {
+            padding: 10px 15px;
+            background-color: #00ff00b3;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        #capture-btn:hover {
+            background-color: #00cc00;
         }
     </style>
 </head>
@@ -255,15 +273,22 @@
         <div class="camera-box">
             <div class="light-effect">
                 <div class="camera-box-inner-box">
+                    <!-- Box for displaying captured image -->
+                    <div class="webcam-box" id="webcam-box">
+                        <video id="webcam" autoplay></video>
+                        <canvas id="canvas" style="display: none;"></canvas>
+                        <img id="captured-image" style="display: none; width: 100%; height: 100%; border-radius: 10px;">
+                    </div>
+
+                    <!-- Existing Overlay Box -->
                     <div class="overlay-box">
-                        <h3><i class="fa-solid fa-robot"></i> Pokiy</h3>
-                        <p>AI Assistant Active</p>
-                        <div class="status-indicator">
-                            <div class="status-light"></div>
-                            <span>Connected</span>
-                        </div>
+                        <h3><i class="fa-solid fa-robot"></i> USS</h3>
+
+                        <!-- Capture Button -->
+                        <button id="capture-btn">Capture Image</button>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -298,8 +323,44 @@
 
     </div>
     <footer class="footer">
-        &copy; 2025 Home | Developed by Satyam.
+        &copy; 2025 Home | Developed by USS.
     </footer>
+
+
+    <script>
+
+        const webcam = document.getElementById('webcam');
+        const captureBtn = document.getElementById('capture-btn');
+        const canvas = document.getElementById('canvas');
+        const capturedImage = document.getElementById('captured-image');
+
+        // Access user webcam
+        navigator.mediaDevices.getUserMedia({ video: { width: 480, height: 360 } }) // Set fixed dimensions
+    .then(stream => {
+        webcam.srcObject = stream;
+        webcam.onloadedmetadata = () => {
+            webcam.play();
+            webcam.style.width = "100%"; // Force it to match the box
+            webcam.style.height = "100%";
+        };
+    })
+    .catch(err => {
+        console.error("Error accessing webcam: ", err);
+    });
+
+        // Capture Image
+        captureBtn.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            canvas.width = webcam.videoWidth;
+            canvas.height = webcam.videoHeight;
+            context.drawImage(webcam, 0, 0, canvas.width, canvas.height);
+
+            // Convert to image
+            capturedImage.src = canvas.toDataURL('image/png');
+            capturedImage.style.display = "block";
+            webcam.style.display = "none";  // Hide live video
+        });
+    </script>
 </body>
 
 </html>
