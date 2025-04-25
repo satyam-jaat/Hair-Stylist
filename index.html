@@ -94,7 +94,6 @@
         }
 
         .camera-box-inner-box {
-
             background: rgba(106, 176, 204, 0.875);
         }
 
@@ -133,7 +132,6 @@
             width: 100%;
             margin-top: -10px;
             box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
-
         }
 
         /* Three Rectangular Boxes */
@@ -142,7 +140,6 @@
             justify-content: space-evenly;
             gap: 15px;
             margin: 20px;
-
         }
 
         .rectangle {
@@ -186,7 +183,6 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-
         .overlay-box {
             position: absolute;
             bottom: 60px;
@@ -204,7 +200,6 @@
             align-items: center;
         }
 
-
         @media (max-width: 768px) {
             .main-box {
                 flex-direction: column;
@@ -219,64 +214,62 @@
         }
 
         #chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-}
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
 
-#chatbot-toggle {
-    background-color: #4c65af;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+        #chatbot-toggle {
+            background-color: #4c65af;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-#chatbot-box {
-    display: none;
-    flex-direction: column;
-    width: 250px;
-    height: 320px;
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
-}
+        #chatbot-box {
+            display: none;
+            flex-direction: column;
+            width: 250px;
+            height: 320px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-top: 10px;
+        }
 
-#chatbot-header {
-    background-color: #4c86af;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
+        #chatbot-header {
+            background-color: #4c86af;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
 
-#chatbot-messages {
-    flex-grow: 1;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: 14px;
-    max-height: 220px;
-}
+        #chatbot-messages {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            font-size: 14px;
+            max-height: 220px;
+        }
 
-#chatbot-input {
-    border: none;
-    border-top: 1px solid #ccc;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
+        #chatbot-input {
+            border: none;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
         .webcam-box {
-           
             width: 90%;
             height: 45%;
             margin-left: 23.5px;
@@ -289,17 +282,17 @@
             /* overflow: hidden; */
             border: 2px solid white;
             margin-bottom: 10px;
-            
         }
 
         #webcam {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video stays within the box without stretching */
-    border-radius: 10px;
-    display: block; /* Ensures it's visible properly */
-}
-
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the video stays within the box without stretching */
+            border-radius: 10px;
+            display: block;
+            /* Ensures it's visible properly */
+        }
 
         #capture-btn {
             padding: 10px 15px;
@@ -344,7 +337,6 @@
                         <button id="capture-btn">Capture Image</button>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -368,28 +360,25 @@
                         <div class="passport-box">2</div>
                         <div class="passport-box">3</div>
                         <div class="passport-box">4</div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Chatbot Toggle Button -->
-<div id="chatbot-container">
-    <button id="chatbot-toggle">💬</button>
-    <div id="chatbot-box">
-        <div id="chatbot-header">Chat with USS 🤖</div>
-        <div id="chatbot-messages"></div>
-        <input type="text" id="chatbot-input" placeholder="Type your message..." />
+    <div id="chatbot-container">
+        <button id="chatbot-toggle">💬</button>
+        <div id="chatbot-box">
+            <div id="chatbot-header">Chat with USS 🤖</div>
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Type your message..." />
+        </div>
     </div>
-</div>
 
     <footer class="footer">
-        &copy; 2025 Home | Developed by USS.
+        © 2025 Home | Developed by USS.
     </footer>
-
 
     <script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
     <script>
@@ -399,106 +388,127 @@
         const capturedImage = document.getElementById('captured-image');
         const wordBoxes = document.querySelectorAll('.rectangle');
         const passportGrid = document.querySelector('.passport-grid');
-    
+        const toggleBtn = document.getElementById('chatbot-toggle');
+        const chatbotBox = document.getElementById('chatbot-box');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+
         // Start webcam
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
+        async function startWebcam() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
                 webcam.srcObject = stream;
-            });
-    
-        // Face shape detection function (mock version)
-        function detectFaceShape(imageDataURL) {
-            // In real implementation, use face-api.js or ML model here
-            const shapes = ['diamond', 'oval', 'round', 'square'];
-            return shapes[Math.floor(Math.random() * shapes.length)]; // Remove this line
-            // For now, return 'oval' for testing
-            return 'oval';
+            } catch (error) {
+                console.error('Error accessing webcam:', error);
+                alert('Could not access webcam. Please allow camera access.');
+            }
         }
-    
+
+        startWebcam();
+
+        // Capture image and send to backend
         captureBtn.addEventListener('click', () => {
             // Capture image
             canvas.width = webcam.videoWidth;
             canvas.height = webcam.videoHeight;
             const ctx = canvas.getContext('2d');
             ctx.drawImage(webcam, 0, 0, canvas.width, canvas.height);
-    
+
             // Show captured image
             const imageDataURL = canvas.toDataURL('image/jpeg');
             capturedImage.src = imageDataURL;
             capturedImage.style.display = 'block';
             webcam.style.display = 'none';
-    
-            // Detect face shape
-            const faceShape = detectFaceShape(imageDataURL);
-    
-            // Update face shape display
-            wordBoxes[0].textContent = faceShape.toUpperCase();
-            wordBoxes[1].style.display = 'none';
-            wordBoxes[2].style.display = 'none';
-    
-            // Clear existing images
-            passportGrid.innerHTML = '';
-    
-            // Load new images from dataset
-            for (let i = 1; i <= 4; i++) {
-                const imgBox = document.createElement('div');
-                imgBox.classList.add('passport-box');
-    
-                const img = document.createElement('img');
-                img.src = `dataset/${faceShape}/${i}.jpeg`; // Updated path
-                img.alt = `${faceShape} hairstyle ${i}`;
-                img.style.width = '100%';
-                img.style.height = '100%';
-                img.style.objectFit = 'cover';
-                img.style.borderRadius = '15px';
-    
-                imgBox.appendChild(img);
-                passportGrid.appendChild(imgBox);
-            }
+
+            // Send image to backend
+            fetch('http://127.0.0.1:5001/detect_face_shape', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: imageDataURL })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Backend response:', data);
+                    if (data.status === 'success') {
+                        // Update face shape display
+                        wordBoxes[0].textContent = data.face_shape.toUpperCase();
+                        wordBoxes[1].style.display = 'none';
+                        wordBoxes[2].style.display = 'none';
+
+                        // Clear existing images
+                        passportGrid.innerHTML = '';
+
+                        // Load new images from dataset
+                        for (let i = 1; i <= 4; i++) {
+                            const imgBox = document.createElement('div');
+                            imgBox.classList.add('passport-box');
+
+                            const img = document.createElement('img');
+                            img.src = `dataset/${data.face_shape}/${i}.jpeg`; // Updated path
+                            img.alt = `${data.face_shape} hairstyle ${i}`;
+                            img.style.width = '100%';
+                            img.style.height = '100%';
+                            img.style.objectFit = 'cover';
+                            img.style.borderRadius = '15px';
+
+                            imgBox.appendChild(img);
+                            passportGrid.appendChild(imgBox);
+                        }
+                    } else {
+                        wordBoxes[0].textContent = `Error: ${data.error || 'Detection Failed'}`;
+                        wordBoxes[1].style.display = 'none';
+                        wordBoxes[2].style.display = 'none';
+                        passportGrid.innerHTML = '<div class="passport-box">Error: No hairstyles available</div>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    wordBoxes[0].textContent = 'Error: Network or Server Issue';
+                    wordBoxes[1].style.display = 'none';
+                    wordBoxes[2].style.display = 'none';
+                    passportGrid.innerHTML = '<div class="passport-box">Error: No hairstyles available</div>';
+                });
         });
 
-        const toggleBtn = document.getElementById('chatbot-toggle');
-        const chatbotBox = document.getElementById('chatbot-box');
-        const chatbotMessages = document.getElementById('chatbot-messages');
-        const chatbotInput = document.getElementById('chatbot-input');
-    
+        // Chatbot toggle
         toggleBtn.onclick = () => {
             chatbotBox.style.display = chatbotBox.style.display === 'flex' ? 'none' : 'flex';
         };
-    
+
+        // Chatbot message handling
         chatbotInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter' && chatbotInput.value.trim()) {
                 const userMsg = chatbotInput.value;
                 chatbotMessages.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
                 chatbotInput.value = '';
                 chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    
+
                 // Send user message to Flask backend
-                fetch('http://localhost:5001/chat', {
+                fetch('http://127.0.0.1:5001/chat', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ message: userMsg })
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.reply) {
-                        chatbotMessages.innerHTML += `<div><strong>Bot:</strong> ${data.reply}</div>`;
-                    } else if (data.error) {
-                        chatbotMessages.innerHTML += `<div><strong>Bot:</strong> Error: ${data.error}</div>`;
-                    }
-                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-                })
-                .catch(error => {
-                    chatbotMessages.innerHTML += `<div><strong>Bot:</strong> Error: ${error.message}</div>`;
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.reply) {
+                            chatbotMessages.innerHTML += `<div><strong>Bot:</strong> ${data.reply}</div>`;
+                        } else if (data.error) {
+                            chatbotMessages.innerHTML += `<div><strong>Bot:</strong> Error: ${data.error}</div>`;
+                        }
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                    })
+                    .catch(error => {
+                        chatbotMessages.innerHTML += `<div><strong>Bot:</strong> Error: ${error.message}</div>`;
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                    });
             }
         });
     </script>
-    
-    
-
 </body>
 
 </html>
