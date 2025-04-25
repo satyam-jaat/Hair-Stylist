@@ -421,7 +421,7 @@
             webcam.style.display = 'none';
 
             // Send image to backend
-            fetch('http://127.0.0.1:5001/detect_face_shape', {
+            fetch('https://hairstyle-backend.onrender.com/detect_face_shape', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
